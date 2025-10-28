@@ -1,0 +1,523 @@
+body::-webkit-scrollbar{display: none;}  /* Hide scrollbar Chrome, Safari, Opera */
+
+html, body {
+    overflow-x: hidden;
+    background-color: #F9FAFB;
+    margin: 0;  /* убрать отступы вокруг страницы */
+    padding: 0; /* убрать отступы внутри страницы */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ------------------------Navigation bar------------------------ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E3E8EE;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'New Amsterdam-Regular';
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Space between navigation items */
+.navbar-nav li {
+    margin-right: 20px;
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.navbar-nav a {
+    color: #2D2D2D;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.navbar-nav a:hover {
+    color: #E76D6D;
+    /* 64C8C8, 5D9EC5 */
+}
+
+.navbar-nav a::after {
+    content: ""; /* create a pseudo-element */
+    position: absolute; /* position the pseudo-element absolutely */
+    bottom: 0; /* place it at the bottom of the link */
+    left: 50%; /* center the pseudo-element horizontally */
+    transform: translateX(-50%); /* adjust the position to center */
+    width: 0; /* initial width is 0 */
+    height: 3px; /* height of the underline */
+    background-color: currentColor; /* use the current text color */
+    transition: width 0.3s ease-in-out; /* add transition effect */
+
+}
+
+.navbar-nav li a:hover::after {
+    width: 100%; /* set the width to 100% on hover */
+    transform: translateX(-50%) scale(1); /* keep the center position and scale to 1 */
+}
+
+/* ------------------------Intro------------------------ */
+
+/* Intro section: Full viewport height, adjusted for fixed navbar */
+#intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px; /* Adjust to your navbar height */
+    padding-bottom: 0;
+    z-index: 1;
+}
+
+/* Intro container: Centers the split text vertically and horizontally */
+.intro-container {
+    text-align: center; /* Centers text alignment */
+    max-width: 800px; /* Keeps it readable on wide screens */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Intro greeting: "Hello" in New Amsterdam, larger for emphasis */
+.intro-greeting {
+    font-size: 64px; /* Larger size for prominence; adjust to 48px if too big */
+    font-family: 'New Amsterdam-Regular';
+    color: #2D2D2D;
+    margin-bottom: 10px; /* Small margin below for separation */
+    line-height: 1.2; /* Tight line height for single word */
+}
+
+/* Intro description: Sentence in Outfit, smaller for contrast */
+.intro-description {
+    font-size: 32px; /* Smaller size for subtext; adjust to 28px if you want closer to greeting */
+    font-family: 'Outfit-Regular';
+    color: #2D2D2D;
+    line-height: 1.4; /* Better for sentence readability */
+    /* No margin needed below unless adding more text */
+}
+
+/* ------------------------Projects------------------------ */
+
+/* Projects grid container: Similar to stack's but with a class name to avoid conflicts */
+.projects-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Matches stack's 4 columns; adjust if needed (e.g., repeat(3, 1fr) for assets) */
+    grid-gap: 10px; /* Matches stack's gap */
+}
+
+/* Project item: Flex column with increased min-height for taller containers */
+.project-item {
+    background-color: #E3E8EE;
+    color: #2D2D2D;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 300px; /* Makes containers taller; adjust value as needed (e.g., 350px for more height) */
+}
+
+.project-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-link {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'Outfit-Regular';
+    color: #2D2D2D;
+    text-decoration: none;
+    background-color: #E3E8EE;
+    transition: background-color 0.2s ease;
+}
+
+.project-description {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: 'Outfit-Regular';
+  color: #2D2D2D;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #CBD3DA;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-link:hover {
+    background-color: #E3E8EE;
+    color: #E76D6D;
+}
+
+/* ------------------------Stack------------------------ */
+
+.content {
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+}
+ 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 одинаковые колонки */
+    grid-gap: 10px;
+  }
+  
+.grid-item {
+  background-color: #E3E8EE;
+  color: #2D2D2D;
+  padding: 20px; /* Отступы внутри ячейки */
+  font-size: 18px; /* Размер шрифта */
+  font-family: 'Outfit-Regular';
+  text-align: center;
+  border-radius: 10px; /* Slightly rounder edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 10px; /* Space below emoji before text */
+  display: inline-block; /* Ensure emojis are treated as inline elements for centering */
+  /* Hover effect for interactivity */
+  transition: transform 0.2s ease;
+}
+
+.emoji:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.skill-name {
+  font-size: 14px;
+  font-family: 'Outfit-SemiBold';
+  color: #2D2D2D;
+}
+
+/* Mini skills container: Spans full width of the grid, placed below the items */
+.mini-skills {
+    grid-column: 1 / -1; /* Spans all columns, like the divider */
+    grid-row: auto; /* Automatically positions below the grid items */
+    margin-top: 20px; /* Space above the mini skills for separation */
+    display: flex; /* Use flexbox for horizontal layout of tags */
+    flex-wrap: wrap; /* Allows tags to wrap to next line if too many */
+    gap: 10px; /* Space between tags */
+    justify-content: center; /* Centers the tags horizontally */
+    padding: 10px 0; /* Optional: Adds slight vertical padding */
+}
+
+/* Mini skill tag: Small, rounded, colorful tags like note-taking app chips */
+.mini-skill-tag {
+    font-size: 12px; /* Smaller text, as requested (tinier than skill names) */
+    font-family: 'Outfit-Regular'; /* Matches your existing font */
+    color: #2D2D2D; /* Matches your text color */
+    padding: 5px 10px; /* Small internal padding for tag shape */
+    border-radius: 15px; /* Rounded edges for a pill/tag look */
+    display: inline-block; /* Ensures tags flow inline */
+    white-space: nowrap; /* Prevents text wrapping inside tags */
+    /* Background-color: Set inline in HTML for each tag (different colors) */
+    /* Optional: Add subtle border or shadow for depth */
+    border: 1px solid #CBD3DA; /* Light border matching text color */
+}
+
+.divider {
+  grid-column: 1 / -1; /* Занимаем всю ширину */
+  grid-row: auto; /* Располагаем на второй строке */
+  justify-self: center; /* Центрируем текст */
+  font-size: 40px;
+  font-family: 'New Amsterdam-Regular';
+  color: #2D2D2D;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ------------------------Engine------------------------ */
+
+/* Engine container: Centers the section, similar to about */
+.engine-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 25px; /* Matches your original top padding; adjust sides as needed */
+}
+
+/* Engine content: Flex layout for text (left) and images (right) */
+.engine-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Engine text section: Left column */
+.engine-text-section {
+    flex: 1;
+    max-width: 60%;
+}
+
+/* Engine headline: Main title */
+.engine-headline {
+    color: #2D2D2D;
+    font-size: 32px; /* Slightly larger for emphasis, like about */
+    font-family: 'Outfit-SemiBold';
+    margin-bottom: 20px;
+}
+
+/* Engine chapter: Container for each part */
+.engine-chapter {
+    margin-bottom: 25px;
+}
+
+/* Engine images section: Right column, now with vertical centering */
+.engine-images-section {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+}
+
+/* Engine images grid: 2x2 grid for 4 images */
+.engine-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 800px; /* Increased from 300px for bigger grid */
+}
+
+/* Engine image: Smaller, styled images */
+.engine-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Increased from 120px for taller images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive: Hide images and make text full-width on narrow screens */
+@media (max-width: 768px) {
+    .engine-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .engine-text-section {
+        max-width: 100%;
+    }
+    .engine-images-section {
+        display: none;
+    }
+    .engine-headline {
+        font-size: 28px;
+    }
+  }
+
+/* ------------------------About------------------------ */
+
+/* About container: Centers the entire section on the page */
+.about-container {
+    max-width: 1200px; /* Limits width on large screens for readability */
+    margin: 0 auto; /* Centers horizontally */
+    padding: 75px 25px; /* Top/bottom padding from your original; left/right for breathing room */
+}
+
+/* About content: Flex layout for text (left) and image (right) */
+.about-content {
+    display: flex;
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-between; /* Space between text and image */
+    align-items: flex-start; /* Aligns to top for varying heights */
+    gap: 40px; /* Space between columns */
+}
+
+/* About text section: Left column with headline and chapters */
+.about-text-section {
+    flex: 1; /* Takes available space, allowing image to fit beside */
+    max-width: 60%; /* Prevents text from being too wide; image gets ~40% */
+}
+
+/* About headline: Main title */
+.about-headline {
+    color: #2D2D2D;
+    font-size: 32px; /* Slightly larger for section emphasis; adjust if needed */
+    font-family: 'Outfit-SemiBold';
+    margin-bottom: 20px; /* Space below headline */
+}
+
+/* About chapter: Container for each logical part */
+.about-chapter {
+    margin-bottom: 25px; /* Space between chapters */
+}
+
+/* Chapter title: Subheading for each chapter */
+.chapter-title {
+    color: #2D2D2D;
+    font-size: 20px; /* Smaller than headline for hierarchy */
+    font-family: 'Outfit-SemiBold';
+    margin-bottom: 10px; /* Space below title */
+}
+
+/* Chapter text: Body text for each chapter */
+.chapter-text {
+    color: #2D2D2D;
+    font-size: 18px; /* Matches your original */
+    font-family: 'Outfit-Regular';
+    line-height: 1.6; /* Improved readability for paragraphs */
+    margin: 0; /* Removes default paragraph margins */
+}
+
+/* About image section: Right column */
+.about-image-section {
+    flex: 0 0 35%; /* Fixed width for image; adjust percentage for balance */
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: flex-start; /* Aligns to top */
+}
+
+/* About image: Styled for portrait/bio look */
+.about-image {
+    width: 100%; /* Fills the section width */
+    max-width: 800px; /* Caps size for balance; adjust as needed */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Matches your grid items' rounded edges */
+    object-fit: cover; /* Scales image without distortion */
+}
+
+/* Responsive: Hide image and make text full-width on narrow screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px; /* Reduce gap */
+    }
+    .about-text-section {
+        max-width: 100%; /* Full width for text */
+    }
+    .about-image-section {
+        display: none; /* Hides image */
+    }
+    .about-headline {
+        font-size: 28px; /* Slightly smaller on mobile */
+    }
+    .chapter-title {
+        font-size: 18px;
+    }
+    .chapter-text {
+        font-size: 16px; /* Smaller for mobile readability */
+    }
+}
+
+/* ------------------------Contacts------------------------ */
+
+/* Footer: Full-width base */
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contacts: Main styling, now with better padding and centering */
+.contacts {
+    width: 100%;
+    background-color: #E3E8EE;
+    color: #2D2D2D;
+    padding: 40px 20px; /* Increased padding for more breathing room */
+    text-align: center;
+    font-family: 'Outfit-Regular';
+    border-top: 1px solid #CBD3DA;
+}
+
+/* Contacts title: Styled heading */
+.contacts-title {
+    font-family: 'Outfit-SemiBold';
+    font-size: 24px; /* Slightly larger for emphasis; adjust if needed */
+    margin: 0 0 20px 0; /* Space below, no top margin */
+}
+
+/* Contacts list: Flexbox for better centering and spacing */
+.contacts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Uses flex for inline centering */
+    justify-content: center; /* Centers links horizontally */
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+    gap: 20px; /* Space between links; adjust for more/less */
+}
+
+/* Contacts list item: No extra margins needed with flex gap */
+.contacts li {
+    display: block; /* Resets to block for flex */
+}
+
+/* Contacts link: Clean styling with hover */
+.contacts a {
+    text-decoration: none;
+    color: #2D2D2D;
+    font-size: 18px; /* Matches your body text */
+    padding: 5px 10px; /* Slight padding for clickable area */
+    transition: color 0.2s ease; /* Smooth hover transition */
+}
+.contacts a:hover {
+    text-decoration: none;
+    color: #E76D6D; /* Your existing hover color */
+    background-color: rgba(244, 153, 26, 0.1); /* Optional: Subtle background on hover for emphasis */
+    border-radius: 8px;
+}
+
+/* Responsive: Stack links vertically on very small screens */
+@media (max-width: 480px) {
+    .contacts-list {
+        flex-direction: column; /* Stacks links */
+        gap: 10px; /* Tighter gap */
+    }
+    .contacts-title {
+        font-size: 20px; /* Smaller on mobile */
+    }
+}
+
+ 
