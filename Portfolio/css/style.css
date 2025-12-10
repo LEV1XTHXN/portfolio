@@ -210,10 +210,12 @@ html, body {
   display: inline-block; /* Ensure emojis are treated as inline elements for centering */
   /* Hover effect for interactivity */
   transition: transform 0.2s ease;
+  cursor: default;
 }
 
 .emoji:hover {
   transform: scale(1.2); /* Slight zoom on hover */
+  cursor: default;
 }
 
 .skill-name {
@@ -246,6 +248,7 @@ html, body {
     /* Background-color: Set inline in HTML for each tag (different colors) */
     /* Optional: Add subtle border or shadow for depth */
     border: 1px solid #CBD3DA; /* Light border matching text color */
+    cursor: default;
 }
 
 .divider {
