@@ -1,28 +1,152 @@
+/* ============================================================
+   STYLEGUIDE — fonts, design tokens, reset
+   Values sampled directly from the Figma screenshots in reference/
+   ============================================================ */
+
 /* ------------------------Fonts------------------------ */
 
+/* Single variable family: use font-weight normally, no family swapping */
 @font-face {
-    font-family: 'New Amsterdam-Regular';
-    src: url('../fonts/NewAmsterdam-Regular.ttf');
-    font-weight: normal;
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
 }
 
+/* Display serif for the hero tagline.
+   Download PlayfairDisplay-Italic.ttf from Google Fonts into fonts/.
+   Until it exists this face just fails and --font-serif falls back to Georgia. */
 @font-face {
-    font-family: 'Outfit-Regular';
-    src: url('../fonts/Outfit/static/Outfit-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: italic;
+    font-display: swap;
 }
 
-@font-face {
-    font-family: 'Outfit-SemiBold';
-    src: url('../fonts/Outfit/static/Outfit-SemiBold.ttf');
-    font-weight: bold;
-    font-style: normal;
+/* ------------------------Tokens------------------------ */
+
+:root {
+    /* Colour */
+    --bg:     #E6E6E6;
+    --ink:    #232323;
+    --orange: #FF932F;
+    --card:   #D9D9D9;
+    --white:  #FFFFFF;
+    --muted:  #A9A9A9;
+
+    /* Type */
+    --font-sans:  'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+    --step-nav:      0.875rem;   /* 14px  navbar */
+    --step-small:    0.9375rem;  /* 15px  project descriptions, meta */
+    --step-body:     1.125rem;   /* 18px  footer links, body */
+    --step-tag:      clamp(1.25rem, 2.2vw, 1.75rem);   /* stack keyword blocks */
+    --step-section:  clamp(2rem, 4.5vw, 3.25rem);      /* "projects", "technological stack" */
+    --step-statement:clamp(1.75rem, 3.2vw, 2.5rem);    /* about statement */
+    --step-tagline:  clamp(1.5rem, 2.8vw, 2.125rem);   /* "I love developing games" */
+    --step-display:  clamp(4rem, 12vw, 8.75rem);       /* "Hello" */
+
+    /* Layout — the shared content column every section aligns to.
+       The about statement and hero tagline both start at this column's midpoint;
+       that alignment is the core idea of the hero, so it reads from one value. */
+    --col-max:   1100px;
+    --col-pad:   clamp(1.25rem, 5vw, 4rem);
+    --band-pad:  clamp(3.5rem, 8vw, 7rem);   /* vertical padding on full-bleed bands */
+
+    --radius-card: 12px;
+    --nav-h: 60px;
 }
 
-/* ------------------------General------------------------ */
+/* ------------------------Reset------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
     scroll-behavior: smooth;
-  }
+    /* keep anchored sections clear of the fixed navbar */
+    scroll-padding-top: var(--nav-h);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: var(--step-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar { display: none; }  /* Hide scrollbar Chrome, Safari, Opera */
+
+h1, h2, h3, h4, p, ul, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ------------------------Shared components------------------------ */
+
+/* The content column. Every section aligns to this, including the inner
+   column of the full-bleed orange bands. */
+.col {
+    width: 100%;
+    max-width: var(--col-max);
+    margin-inline: auto;
+    padding-inline: var(--col-pad);
+}
+
+/* The orange highlight-marker. Used by the hero tagline, "game developer"
+   in the about statement, and the three stack keywords. */
+.hl {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.08em 0.36em 0.14em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* Full-bleed band. Bands are direct children of <main>/<body>, so they are
+   already viewport-wide — no 100vw breakout, which would overflow by the
+   scrollbar width. The inner .col re-establishes the content column. */
+.band {
+    width: 100%;
+    padding-block: var(--band-pad);
+}
+
+.band--orange {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/* Lowercase section heading — "projects", "technological stack", "game engine" */
+.section-title {
+    font-size: var(--step-section);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

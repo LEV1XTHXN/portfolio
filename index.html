@@ -1,194 +1,347 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Egor Simakov — game developer. Games, engines and tools.">
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Egor Simakov — Game Developer</title>
+</head>
 
-<html lang="en"> 
-    <head> 
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="css/styleguide.css"> 
-        <title> Portfolio </title>
-    </head>
+<body>
 
-    <body>
+    <!-- ============================ NAVBAR ============================ -->
+    <header>
+        <nav class="navbar" aria-label="Main">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="visually-hidden">Menu</span>
+            </button>
+            <ul class="navbar-nav" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#game-engine">Game engine</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============================ INTRO / HOME ============================ -->
         <section id="home">
-            <nav class="navbar">
-                <ul class="navbar-nav"> 
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#stack">Stack</a></li>
-                    <li><a href="#game-engine">Game engine</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
-            </nav>
-        </section>
-
-        <br>
-
-        <section id="intro">
-            <div class="content">
-                <div class="intro-container"> <!-- New wrapper for centering the split text -->
-                    <div class="intro-greeting">Hello</div> <!-- "Hello" in New Amsterdam, larger font -->
-                    <div class="intro-description">I love developing games</div> <!-- Sentence in Outfit, smaller font with margin -->
-                </div>
+            <div class="col intro__inner">
+                <h1 class="intro__hello">Hello</h1>
+                <p class="intro__tagline"><span class="hl">I love developing games</span></p>
             </div>
         </section>
 
-        <section id="projects">
-            <div class="content"> <!-- Reuses .content for consistent padding -->
-                <div class="projects-grid-container"> 
-                    <div class="divider">Projects</div> <!-- Reuses .divider -->
-                    <div class="project-item"> 
-                        <img src="images\placeholder.jpg" alt="Project 1 Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://itch.io/your-project1" class="project-link">View on itch.io</a>
-                    </div>
-                    <div class="project-item">
-                        <img src="images\placeholder.jpg" alt="Project 2 Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://store.steampowered.com/your-project2" class="project-link">View on Steam</a>
-                    </div>
-                    <div class="project-item">
-                        <img src="images\placeholder.jpg" alt="Project 3 Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://itch.io/your-project3" class="project-link">View on itch.io</a>
-                    </div>
-                    <div class="project-item">
-                        <img src="images\placeholder.jpg" alt="Project 4 Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://store.steampowered.com/your-project4" class="project-link">View on Steam</a>
-                    </div>
-                    <div class="project-item">
-                        <img src="images\placeholder.jpg" alt="Project 5 Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://itch.io/your-project5" class="project-link">View on itch.io</a>
-                    </div>
-                    <div class="divider">Assets</div>
-                    <div class="project-item"> 
-                        <img src="images\placeholder.jpg" alt="Asset Image" class="project-image">
-                        <div class="project-description">An epic RPG with procedural generation, available on Steam for immersive gameplay.</div>
-                        <a href="https://itch.io/your-asset" class="project-link">View on itch.io</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <br>
-
-        <section id="stack">
-            <div class="content">
-                <div class="grid-container">
-                    <div class="divider">Technological stack</div>
-                    <div class="grid-item">
-                        <div class="emoji">🎮</div> <!-- Represents Unity (game engine) -->
-                        <div class="skill-name">Unity</div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="emoji">🚀</div> <!-- Represents Unreal Engine (advanced game engine) -->
-                        <div class="skill-name">Unreal Engine</div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="emoji">🔧</div> <!-- Represents Vulkan (graphics API) -->
-                        <div class="skill-name">Vulkan</div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="emoji">🖼️</div> <!-- Represents Blender (3D modeling) -->
-                        <div class="skill-name">Blender</div>
-                    </div>
-
-                    <div class="mini-skills">
-                        <!-- Each mini skill is a tag with smaller text and colorful background -->
-                        <span class="mini-skill-tag" style="background-color: #E76D6D;">Python</span> 
-                        <span class="mini-skill-tag" style="background-color: #74C29C;">Git</span> 
-                        <span class="mini-skill-tag" style="background-color: #58C1DD;">JavaScript</span> 
-                        <span class="mini-skill-tag" style="background-color: #F4C542;">C#</span> 
-                        <span class="mini-skill-tag" style="background-color: #E76D6D;">Photoshop</span>
-                        <span class="mini-skill-tag" style="background-color: #58C1DD;">Aseprite</span>
-                        <span class="mini-skill-tag" style="background-color: #74C29C;">DaVinci Resolve</span>
-                        <span class="mini-skill-tag" style="background-color: #F4C542;">Dart</span>
-                        <span class="mini-skill-tag" style="background-color: #58C1DD;">Flutter</span>
-                        <span class="mini-skill-tag" style="background-color: #E76D6D;">VS Code</span>
-                        <span class="mini-skill-tag" style="background-color: #74C29C;">MagicaVoxel</span>
-                        <span class="mini-skill-tag" style="background-color: #F4C542;">Java</span>
-                        <span class="mini-skill-tag" style="background-color: #58C1DD;">Kanban</span>
-                        <span class="mini-skill-tag" style="background-color: #E76D6D;">Game Design</span>
-                        <span class="mini-skill-tag" style="background-color: #74C29C;">Algorithms</span>
-                        <span class="mini-skill-tag" style="background-color: #F4C542;">Computer Graphics</span>
-                        <span class="mini-skill-tag" style="background-color: #E76D6D;">AI</span>
-                        <span class="mini-skill-tag" style="background-color: #F4C542;">Godot</span>
-                        <!-- Add more as needed; each with a unique background-color -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="game-engine">
-            <div class="engine-container"> <!-- Centered wrapper, similar to about -->
-                <div class="engine-content"> <!-- Flex container for text and images -->
-                    <div class="engine-text-section"> <!-- Left side: Headline and chapters -->
-                        <div class="engine-headline">Game Engine</div>
-                        <div class="engine-chapter">
-                            <h3 class="chapter-title">Overview</h3>
-                            <p class="chapter-text">Game engines are the backbone of modern game development, providing powerful tools for creating interactive worlds. I specialize in engines like Unity and Unreal Engine, which offer robust frameworks for scripting, physics, and rendering.</p>
-                        </div>
-                        <div class="engine-chapter">
-                            <h3 class="chapter-title">Key Features</h3>
-                            <p class="chapter-text">These engines excel in areas like real-time rendering, cross-platform deployment, and asset management. Unity's C# scripting and visual editor make prototyping fast, while Unreal's Blueprint system and high-fidelity graphics enable cinematic experiences.</p>
-                        </div>
-                        <div class="engine-chapter">
-                            <h3 class="chapter-title">My Experience</h3>
-                            <p class="chapter-text">I've leveraged these tools to build diverse projects, from indie games to complex simulations. Optimizing performance and integrating custom mechanics are key challenges I've mastered, ensuring seamless gameplay across devices.</p>
-                        </div>
-                    </div>
-                    <div class="engine-images-section"> <!-- Right side: 4 smaller images in a grid -->
-                        <div class="engine-images-grid">
-                            <img src="images\placeholder.jpg" alt="Engine UI Interface" class="engine-image"> <!-- E.g., UI/editor screenshot -->
-                            <img src="images\placeholder.jpg" alt="Scripting and Code" class="engine-image"> <!-- E.g., code/scripting example -->
-                            <img src="images\placeholder.jpg" alt="Rendering and Graphics" class="engine-image"> <!-- E.g., rendering demo -->
-                            <img src="images\placeholder.jpg" alt="Tools and Assets" class="engine-image"> <!-- E.g., asset pipeline/tools -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- ============================ ABOUT ============================ -->
         <section id="about">
-            <div class="about-container"> <!-- New: Centered wrapper for the entire section -->
-                <div class="about-content"> <!-- Flex container for text and image -->
-                    <div class="about-text-section"> <!-- Left side: Text with headline and chapters -->
-                        <div class="about-headline">About Me</div>
-                        <div class="about-chapter">
-                            <h3 class="chapter-title">Introduction</h3>
-                            <p class="chapter-text">Hello! My name is Egor and I am a dedicated and detail-oriented game developer with a passion for creating immersive experiences.</p>
-                        </div>
-                        <div class="about-chapter">
-                            <h3 class="chapter-title">Skills & Expertise</h3>
-                            <p class="chapter-text">I have strong proficiency in C++, Java, and Python, along with experience in game design, 3D modeling, and gameplay mechanics. My technical expertise and creative problem-solving help deliver high-quality gaming experiences. <a href="https://t.me/King_Auberon" target="_blank">You can have a look at my CV if you're interested</a></p>
-                        </div>
-                        <div class="about-chapter">
-                            <h3 class="chapter-title">Passion & Goals</h3>
-                            <p class="chapter-text">I thrive in collaborative, cross-disciplinary teams, contributing innovative ideas to tackle complex challenges. Committed to industry trends, I aim to create cutting-edge games that resonate with players.</p>
-                        </div>
-                    </div>
-                    <div class="about-image-section"> <!-- Right side: Image -->
-                        <img src="images\portrait-removebg-preview.png" alt="Photo of Egor" class="about-image">
-                    </div>
+            <div class="col about__inner">
+                <img class="about__portrait" src="images/portrait.jpg"
+                     alt="Portrait of Egor Simakov" width="330" height="330">
+                <p class="about__statement">
+                    My name is Egor and I am a dedicated and detail-oriented
+                    <span class="hl">game developer</span> with a passion for
+                    creating immersive experiences.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================ PROJECTS ============================ -->
+        <section id="projects" class="band band--orange">
+            <div class="col">
+                <h2 class="section-title">projects</h2>
+
+                <!-- ==================================================================
+                     EDIT YOUR PROJECTS HERE
+                     Each <li> is one project. Swap the description, the image and
+                     the link. The (n) numbering is generated by CSS, so reordering
+                     or adding items renumbers automatically.
+                     ================================================================== -->
+                <ul class="projects">
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://itch.io/your-project1" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on itch.io</span>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://store.steampowered.com/your-project2" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on Steam</span>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://itch.io/your-project3" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on itch.io</span>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://store.steampowered.com/your-project4" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on Steam</span>
+                        </a>
+                    </li>
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://itch.io/your-project5" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on itch.io</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <h2 class="section-title projects__subhead">assets</h2>
+
+                <ul class="projects">
+                    <li class="project">
+                        <p class="project__desc">An epic RPG with procedural generation, available on Steam for immersive gameplay.</p>
+                        <a class="project__card" href="https://itch.io/your-asset" target="_blank" rel="noopener">
+                            <img class="project__thumb" src="images/placeholder.jpg" alt="">
+                            <span class="project__cta">View on itch.io</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============================ STACK ============================ -->
+        <section id="stack">
+            <div class="col">
+                <h2 class="section-title stack__title">technological stack</h2>
+
+                <div class="stack__inner">
+
+                    <!-- ==============================================================
+                         EDIT PROFICIENCY HERE — style="--pct: NN%" drives the bar.
+                         The logos are icon-only, so each row pairs the icon with its
+                         name. If a logo file goes missing the name stands in alone.
+                         ============================================================== -->
+                    <ul class="skills">
+                        <!-- skill--wordmark: this logo already contains the name,
+                             so the text label is suppressed and the mark runs larger -->
+                        <li class="skill skill--wordmark" style="--pct: 75%">
+                            <span class="skill__logo">
+                                <img src="images/logos/vulkan-svgrepo-com.svg" alt="Vulkan">
+                                <span class="skill__name">Vulkan</span>
+                            </span>
+                            <span class="skill__pct">75 %</span>
+                            <span class="skill__bar" role="meter" aria-label="Vulkan proficiency"
+                                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
+                        </li>
+                        <li class="skill" style="--pct: 75%">
+                            <span class="skill__logo">
+                                <img src="images/logos/unity-svgrepo-com.svg" alt="">
+                                <span class="skill__name">Unity</span>
+                            </span>
+                            <span class="skill__pct">75 %</span>
+                            <span class="skill__bar" role="meter" aria-label="Unity proficiency"
+                                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
+                        </li>
+                        <li class="skill" style="--pct: 75%">
+                            <span class="skill__logo">
+                                <img src="images/logos/blender-svgrepo-com.svg" alt="">
+                                <span class="skill__name">Blender</span>
+                            </span>
+                            <span class="skill__pct">75 %</span>
+                            <span class="skill__bar" role="meter" aria-label="Blender proficiency"
+                                  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span>
+                        </li>
+                        <li class="skill" style="--pct: 90%">
+                            <span class="skill__logo">
+                                <img src="images/logos/unreal-engine-svgrepo-com.svg" alt="">
+                                <span class="skill__name">Unreal</span>
+                            </span>
+                            <span class="skill__pct">90 %</span>
+                            <span class="skill__bar" role="meter" aria-label="Unreal Engine proficiency"
+                                  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></span>
+                        </li>
+                    </ul>
+
+                    <span class="stack__amp" aria-hidden="true">&amp;</span>
+
+                    <ul class="stack__tags">
+                        <li><span class="hl">algorithms</span></li>
+                        <li><span class="hl">game design</span></li>
+                        <li><span class="hl">computer graphics</span></li>
+                    </ul>
+
                 </div>
             </div>
         </section>
 
-        <section id="contacts">
-            <footer>
-                <nav class="contacts">
-                    <h2 class="contacts-title">Contacts</h2>
-                    <ul class="contacts-list">
-                        <li><a href="https://t.me/King_Auberon" target="_blank">Telegram</a></li>
-                        <li><a href="https://www.linkedin.com/in/egor-simakov-5a0ba92a1/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/LEV1XTHXN" target="_blank">GitHub</a></li>
-                        <li><a href="link" target="_blank">Email</a></li>
-                    </ul>
-                </nav>
-            </footer>
+        <!-- ============================ GAME ENGINE ============================ -->
+        <section id="game-engine">
+            <div class="col">
+                <h2 class="section-title">game engine</h2>
+
+                <!-- ==============================================================
+                     The engine is code-only — there is no editor to screenshot.
+                     So the game it produced stands in as the visual, the feature
+                     list carries the substance, and the API snippet stands in for
+                     a UI tour.
+                     ============================================================== -->
+                <div class="engine__hero">
+                    <div class="engine__intro">
+                        <h3 class="engine__name">glacier</h3>
+                        <p class="engine__pitch">
+                            A real-time 3D engine written
+                            <span class="hl">from scratch</span> in C++ on top of Vulkan,
+                            built for my university project together with the game
+                            running on it.
+                        </p>
+
+                        <!-- EDIT SPECS HERE — label / value pairs -->
+                        <dl class="engine__meta">
+                            <div class="engine__meta-row">
+                                <dt>Language</dt>
+                                <dd>C++</dd>
+                            </div>
+                            <div class="engine__meta-row">
+                                <dt>Graphics API</dt>
+                                <dd>Vulkan</dd>
+                            </div>
+                            <div class="engine__meta-row">
+                                <dt>Context</dt>
+                                <dd>University project</dd>
+                            </div>
+                            <div class="engine__meta-row">
+                                <dt>Role</dt>
+                                <dd>Sole author</dd>
+                            </div>
+                        </dl>
+
+                        <ul class="engine__links">
+                            <!-- TODO: real URL -->
+                            <li><a href="https://github.com/LEV1XTHXN" target="_blank" rel="noopener">Source on GitHub</a></li>
+                            <!-- TODO: real URL -->
+                            <li><a href="https://itch.io/your-glacier-game" target="_blank" rel="noopener">Play the game</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Poster is a real game still, so the frame is never empty —
+                         js/main.js swaps in the poster as an <img> if the video
+                         file is missing, and holds the first frame under
+                         prefers-reduced-motion. -->
+                    <figure class="engine__showcase">
+                        <video class="engine__video"
+                               autoplay muted loop playsinline preload="metadata"
+                               poster="images/placeholder.jpg">
+                            <source src="video/glacier.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                </div>
+
+                <!-- EDIT SCREENSHOTS HERE -->
+                <ul class="engine__shots">
+                    <li>
+                        <figure>
+                            <img src="images/placeholder.jpg" alt="Glacier engine rendering a scene from the game" width="640" height="360">
+                            <figcaption>Lighting and shadows</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/placeholder.jpg" alt="Glacier engine rendering a scene from the game" width="640" height="360">
+                            <figcaption>Materials and textures</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="images/placeholder.jpg" alt="Glacier engine rendering a scene from the game" width="640" height="360">
+                            <figcaption>Gameplay</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+
+                <!-- ==============================================================
+                     EDIT SUBSYSTEMS HERE — the (n) numbering is generated by CSS,
+                     so adding or reordering items renumbers automatically.
+                     ============================================================== -->
+                <h3 class="engine__subhead">what is inside</h3>
+
+                <ul class="engine__features">
+                    <li class="feature">
+                        <h4 class="feature__title">Vulkan renderer</h4>
+                        <p class="feature__desc">Swapchain, render passes, pipelines and descriptor management written directly against the Vulkan API.</p>
+                    </li>
+                    <li class="feature">
+                        <h4 class="feature__title">Entity-component system</h4>
+                        <p class="feature__desc">Data-oriented storage that keeps components contiguous in memory so systems iterate them in cache order.</p>
+                    </li>
+                    <li class="feature">
+                        <h4 class="feature__title">Asset pipeline</h4>
+                        <p class="feature__desc">Loads meshes, textures and materials, then uploads them to GPU memory through staging buffers.</p>
+                    </li>
+                    <li class="feature">
+                        <h4 class="feature__title">Scene &amp; camera</h4>
+                        <p class="feature__desc">Transform hierarchy with a perspective camera, view frustum culling and per-frame uniform updates.</p>
+                    </li>
+                    <li class="feature">
+                        <h4 class="feature__title">Platform layer</h4>
+                        <p class="feature__desc">Window creation, surface setup and buffered keyboard and mouse input behind one interface.</p>
+                    </li>
+                    <li class="feature">
+                        <h4 class="feature__title">Game loop</h4>
+                        <p class="feature__desc">Fixed-step update decoupled from rendering, with frame timing and resource lifetime handled by the engine.</p>
+                    </li>
+                </ul>
+
+                <!-- ==============================================================
+                     EDIT THE SNIPPET HERE — tokens are marked up by hand so the
+                     page stays dependency-free. tok-kw keyword, tok-fn call,
+                     tok-str literal, tok-com comment.
+                     ============================================================== -->
+                <div class="engine__code-block">
+                    <p class="engine__code-label">main.cpp</p>
+                    <pre class="engine__code"><code><span class="tok-com">// Everything the engine needs to put a scene on screen.</span>
+<span class="tok-kw">int</span> <span class="tok-fn">main</span>() {
+    glacier::Engine engine{ <span class="tok-str">"Glacier"</span>, <span class="tok-str">1280</span>, <span class="tok-str">720</span> };
+
+    <span class="tok-kw">auto</span>&amp; scene = engine.<span class="tok-fn">createScene</span>();
+    <span class="tok-kw">auto</span>  model = engine.<span class="tok-fn">loadModel</span>(<span class="tok-str">"assets/level.obj"</span>);
+
+    <span class="tok-kw">auto</span> entity = scene.<span class="tok-fn">createEntity</span>();
+    entity.<span class="tok-fn">add</span>&lt;Transform&gt;({ .position = { <span class="tok-str">0.0f</span>, <span class="tok-str">0.0f</span>, <span class="tok-str">0.0f</span> } });
+    entity.<span class="tok-fn">add</span>&lt;MeshRenderer&gt;({ .model = model });
+
+    scene.<span class="tok-fn">addSystem</span>&lt;PlayerController&gt;();
+
+    <span class="tok-com">// Fixed-step update, rendering runs as fast as the GPU allows.</span>
+    <span class="tok-kw">while</span> (engine.<span class="tok-fn">isRunning</span>()) {
+        engine.<span class="tok-fn">update</span>();
+        engine.<span class="tok-fn">render</span>(scene);
+    }
+}</code></pre>
+                </div>
+            </div>
         </section>
 
-    </body>
-    
+    </main>
+
+    <!-- ============================ CONTACTS ============================ -->
+    <footer id="contacts" class="band band--orange">
+        <div class="col">
+            <h2 class="section-title">contacts</h2>
+            <ul class="contacts-list">
+                <li><a href="https://t.me/King_Auberon" target="_blank" rel="noopener">Telegram</a></li>
+                <li><a href="https://www.linkedin.com/in/egor-simakov-5a0ba92a1/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/LEV1XTHXN" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="mailto:sir.simackov2016@gmail.com">Email</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
