@@ -270,11 +270,17 @@
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 2px;
+    transition: color 0.2s ease;
 }
 
 .project__card:hover,
 .project__card:focus-visible {
     transform: scale(1.02);
+}
+
+.project__card:hover .project__cta,
+.project__card:focus-visible .project__cta {
+    color: var(--orange);
 }
 
 @media (max-width: 720px) {
